@@ -26,9 +26,13 @@ exclude_patterns = []
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../DOGcosmoS/'))
+sys.path.insert(0, os.path.abspath('../../venv_OSS/lib/'))
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+
+# set master doc file --------------------
+master_doc = 'index'
