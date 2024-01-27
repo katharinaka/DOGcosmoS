@@ -11,7 +11,7 @@ Welcome to DOGcosmoS's documentation!
    :caption: Contents:
 
    check_angmom_reliability.rst
-
+   sample_selection.rst
 
 
 Indices and tables

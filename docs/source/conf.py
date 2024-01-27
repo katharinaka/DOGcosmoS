@@ -26,7 +26,8 @@ exclude_patterns = []
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../DOGcosmoS/'))
-sys.path.insert(0, os.path.abspath('../../venv_OSS/lib/'))
+sys.path.insert(0, os.path.abspath('/home/fs71897/kkain/swiftgalaxy'))
+sys.path.insert(0, os.path.abspath('/home/fs71897/kkain/swiftsimio/docs/source/velociraptor'))
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

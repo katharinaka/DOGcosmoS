@@ -3,15 +3,15 @@ from swiftgalaxy import Velociraptor, SWIFTGalaxy
 import unyt as U
 from velociraptor import load as load_catalogue
 from manage_paths import manage_paths
-from martini.sources import SWIFTGalaxySource
-from martini.sources._L_align import L_align
+#from martini.sources import SWIFTGalaxySource
+#from martini.sources._L_align import L_align
 
 snapshotfile, halo_catalogue, catalogue_files, path_results, path_plots = manage_paths("COLIBRE_v2023_03")
 
 sample_indices = np.load(path_results+'sample_indices.npy')
 
 def angmom(xyz, vxyz, m, frac):
-
+    """ calculates angular momentum """
     transposed = False
     if xyz.ndim != 2:
         raise ValueError(
