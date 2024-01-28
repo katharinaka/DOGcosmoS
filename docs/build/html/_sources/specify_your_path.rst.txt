@@ -1,8 +1,8 @@
 .. _specify_your_paths:
 
-==============================
+=================================
 Specify Your Paths Configuration
-==============================
+=================================
 
 Before diving into DOGcosmoS, you need to specify the paths to the simulation snapshot you wish to analyse, the according halo catalogue and your preferred output directory in the configuration file 'specify_your_paths.ini'. The file is structured as follows: 
 

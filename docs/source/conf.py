@@ -24,16 +24,17 @@ exclude_patterns = []
 
 
 # ----Exclude modules from autodoc
-autodoc_mock_imports = ['numpy']
-autodoc_mock_imports = ['sympy']
+#autodoc_mock_imports = ['numpy']
+#autodoc_mock_imports = ['sympy']
+
 
 
 # -- Path ------------------------
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../../DOGcosmoS/'))
-sys.path.insert(0, os.path.abspath('/home/fs71897/kkain/swiftgalaxy'))
-sys.path.insert(0, os.path.abspath('/home/fs71897/kkain/.local/lib/python3.10/site-packages/'))
+#sys.path.insert(0, os.path.abspath('/home/fs71897/kkain/swiftgalaxy'))
+#sys.path.insert(0, os.path.abspath('/Users/puk/OSS_development/devel_venv/lib/python3.9/site-packages/velociraptor/'))
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -44,6 +45,3 @@ html_static_path = ['_static']
 # set master doc file --------------------
 master_doc = 'index'
 
-#check python version, remove again
-import sys
-print(f"Python version used by Sphinx: {sys.version}")
