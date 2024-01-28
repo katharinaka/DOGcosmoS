@@ -1,4 +1,4 @@
-.. _angmom_reliability:
+.. _check_angmom_reliability:
 
 Angular Momentum
 ================
