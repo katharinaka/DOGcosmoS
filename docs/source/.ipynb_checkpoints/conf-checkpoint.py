@@ -22,12 +22,6 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
-
-# ----Exclude modules from autodoc
-autodoc_mock_imports = ['numpy']
-autodoc_mock_imports = ['sympy']
-
-
 # -- Path ------------------------
 import os
 import sys
@@ -43,7 +37,3 @@ html_static_path = ['_static']
 
 # set master doc file --------------------
 master_doc = 'index'
-
-#check python version, remove again
-import sys
-print(f"Python version used by Sphinx: {sys.version}")

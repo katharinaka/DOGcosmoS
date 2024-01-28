@@ -1,5 +1,5 @@
 import numpy as np
-#from velociraptor import load as load_catalogue
+from velociraptor import load as load_catalogue
 #from manage_paths import manage_paths
 #from martini.sources import SWIFTGalaxySource
 #from martini.sources._L_align import L_align
@@ -60,28 +60,28 @@ def angular_momentum_variation(max_frac=0.3, shells=5):
     Lhat_variation_sample =[]
     for i in sample_indices:
         
-        sg = SWIFTGalaxy(
-                snapshotfile,    
-                 Velociraptor(
-                 #velociraptor_filebase=halo_catalogue,
-                 velociraptor_files=catalogue_files,
-                 halo_index=i,
-                 centre_type='minpot',
-                 extra_mask='bound_only',
-             ),
-        )          
+    sg = SWIFTGalaxy(
+          snapshotfile,    
+             Velociraptor(
+             #velociraptor_filebase=halo_catalogue,
+             velociraptor_files=catalogue_files,
+             halo_index=i,
+             centre_type='minpot',
+             extra_mask='bound_only',
+         ),
+    )          
           
 
-        Lhat_varying_massfrac = []
+    Lhat_varying_massfrac = []
 
-        for frac in np.linspace(0.1, max_frac, shells):
+    for frac in np.linspace(0.1, max_frac, shells):
           
-            Lhat = angmom(sg.gas.coordinates, sg.gas.velocities, sg.gas.atomic_hydrogen_masses, frac)
-            Lhat_varying_massfrac.append(Lhat)
+        Lhat = angmom(sg.gas.coordinates, sg.gas.velocities, sg.gas.atomic_hydrogen_masses, frac)
+        Lhat_varying_massfrac.append(Lhat)
 
-        Lhat_variation = np.sqrt(np.mean(np.std(Lhat_varying_massfrac, axis=0)**2))
-        #Lhat_variation = np.std(Lhat_varying_massfrac, axis=0)
-        Lhat_variation_sample.append(Lhat_variation)
+    Lhat_variation = np.sqrt(np.mean(np.std(Lhat_varying_massfrac, axis=0)**2))
+    #Lhat_variation = np.std(Lhat_varying_massfrac, axis=0)
+    Lhat_variation_sample.append(Lhat_variation)
     
-        return Lhat_variation_sample
+    return Lhat_variation_sample
 #np.save(path_results+'Lhat_variation', Lhat_variation_sample)

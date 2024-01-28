@@ -10,8 +10,9 @@ Welcome to DOGcosmoS's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   check_angmom_reliability.rst
+   specify_your_path.rst
    sample_selection.rst
+   check_angmom_reliability.rst
 
 
 Indices and tables

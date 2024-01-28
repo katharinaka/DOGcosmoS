@@ -3,7 +3,7 @@
 Sample selection
 =================
 
-Select your sample
+Select yout sample
 
 .. automodule:: sample_selection
    :members:
