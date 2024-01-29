@@ -13,7 +13,9 @@ Welcome to DOGcosmoS's documentation!
    specify_your_path.rst
    sample_selection.rst
    check_angmom_reliability.rst
-
+   vcirc.rst
+   rotation_curve_shapes.rst
+   
 
 Indices and tables
 ==================
