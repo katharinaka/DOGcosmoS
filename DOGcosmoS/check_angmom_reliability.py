@@ -8,8 +8,6 @@ from sample_selection import select_sample
 from swiftgalaxy import Velociraptor, SWIFTGalaxy
 
 
-sample_indices = select_sample()
-
 def angmom(xyz, vxyz, m, frac):
     """ Calculates the angular momentum """
     transposed = False
