@@ -56,7 +56,7 @@ def NFW_concentration(M,z):
     c = 10**log_c
     return c
 
-def plot_vfid_vmax(vmax_min_sample, vmax_max_sample, title='Rotation curve diversity', legend='simulation data', plot_NFW_ref=False, save_as='vfid_vs_vmax.png', dpi=200):
+def plot_vfid_vmax(vmax_min_sample, vmax_max_sample, title='Rotation curve diversity', legend='simulation data', plot_NFW_ref=True, save_as='vfid_vs_vmax.png', dpi=200):
 #def plot_vfid_vmax(sample_indices, title='Rotation curve diversity', legend='simulation data', plot_NFW_ref=True, save_as='vfid_vs_vmax.png', dpi=200):
 
     vmax_sample, vfid_sample, eta_rot_sample = quantify_rotation_curve_shapes(vmax_min_sample, vmax_max_sample, save=None)
@@ -92,8 +92,8 @@ def plot_vfid_vmax(vmax_min_sample, vmax_max_sample, title='Rotation curve diver
     plt.ylabel('$V_{fid}$', fontsize=18)
     ##plt.xlim([59, 121])
     ##plt.ylim([25, 120])
-    #plt.xlim([20, 150])
-    #plt.ylim([3, 120])
+    plt.xlim([20, 150])
+    plt.ylim([3, 120])
     plt.title(title)
     if plot_NFW_ref:
         plt.legend(['1:1', 'NFW', legend])
@@ -102,15 +102,15 @@ def plot_vfid_vmax(vmax_min_sample, vmax_max_sample, title='Rotation curve diver
     plt.xscale('log')
     plt.yscale('log')
     
-    #x_ticks = [20, 30, 40, 50, 60, 80, 100, 120, 150]  # These are the true numbers
-    #x_tick_labels = ['20', '30', '40', '50', '60', '80', '100', '120', '150']  # Custom labels
-    #plt.xticks(x_ticks, x_tick_labels, fontsize=16)
-    #y_ticks = [10, 20, 30, 50, 70, 90, 120]  # These are the true numbers
-    #y_tick_labels = ['10', '20', '30', '70', '50', '90', '120']  # Custom labels
-    #plt.yticks(y_ticks, y_tick_labels, fontsize=16)
+    x_ticks = [20, 30, 40, 50, 60, 80, 100, 120, 150]  # These are the true numbers
+    x_tick_labels = ['20', '30', '40', '50', '60', '80', '100', '120', '150']  # Custom labels
+    plt.xticks(x_ticks, x_tick_labels, fontsize=16)
+    y_ticks = [10, 20, 30, 50, 70, 90, 120]  # These are the true numbers
+    y_tick_labels = ['10', '20', '30', '70', '50', '90', '120']  # Custom labels
+    plt.yticks(y_ticks, y_tick_labels, fontsize=16)
     
-    #plt.plot(np.ones(117)*60, np.linspace(3,120, 117), linestyle="--", color="grey")
-    #findplt.plot(np.ones(117)*120, np.linspace(3,120, 117), linestyle="--", color="grey")
+    plt.plot(np.ones(117)*60, np.linspace(3,120, 117), linestyle="--", color="grey")
+    findplt.plot(np.ones(117)*120, np.linspace(3,120, 117), linestyle="--", color="grey")
     cbar = fig.colorbar(data)
     cbar.set_label(r'$\eta_{rot} = v_{fid} / v_{max}$')
     plt.tight_layout()
