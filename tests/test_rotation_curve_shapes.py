@@ -3,6 +3,7 @@ sys.path.append('/Users/puk/OSS_development/DOGcosmoS')
 
 import numpy as np
 import configparser
+from DOGcosmoS import sample_selection
 from DOGcosmoS.sample_selection import select_sample, read_paths_from_config
 from DOGcosmoS.rotation_curve_shapes import quantify_rotation_curve_shapes
 from DOGcosmoS.vcirc import vcirc_total, vcirc_particle_type

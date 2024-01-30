@@ -6,7 +6,7 @@ import configparser
 from DOGcosmoS.sample_selection import select_sample, read_paths_from_config
 
 def test_read_paths():
-    snapshotfile, halo_catalogue_files, output_path = read_paths_from_config()
+    snapshotfile, halo_catalogue_files, output_path = read_paths_from_config('DOGcosmoS/specify_your_paths.ini')
 
 
     assert snapshotfile == '/Users/puk/Downloads/small_cosmo_volume/snap_0199.hdf5'
@@ -16,6 +16,6 @@ def test_read_paths():
 
 def test_select_sample():
     
-    sample_indices = select_sample(vmax_min=60, vmax_max=120)
+    sample_indices = select_sample(vmax_min=200, vmax_max=250)
 
     assert len(sample_indices) > 0

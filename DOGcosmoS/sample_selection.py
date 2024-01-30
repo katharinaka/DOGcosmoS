@@ -20,14 +20,14 @@ def read_paths_from_config(config_file='specify_your_paths.ini'):
 
     if extension == '.0':
         halo_catalogue_files = dict(
-            properties=fr"{halo_catalogue}.properties.0",
-            catalog_groups=fr"{halo_catalogue}.catalog_groups.0",
+            properties=f"{halo_catalogue}.properties.0",
+            catalog_groups=f"{halo_catalogue}.catalog_groups.0",
         )
 
     else:
         halo_catalogue_files = dict(
-            properties=fr"{halo_catalogue}.properties",
-            catalog_groups=fr"{halo_catalogue}.catalog_groups",
+            properties=f"{halo_catalogue}.properties",
+            catalog_groups=f"{halo_catalogue}.catalog_groups",
         )
 
 
@@ -37,7 +37,7 @@ def read_paths_from_config(config_file='specify_your_paths.ini'):
     return snapshotfile, halo_catalogue_files, output_path
     
 
-def select_sample(vmax_min, vmax_max, satellites=None, save=None):
+def select_sample(vmax_min, vmax_max, centrals=True, save=None):
     """Function to select your galaxy sample according to the range in maximum rotational velocity and environment.
 
     Args:
@@ -49,12 +49,14 @@ def select_sample(vmax_min, vmax_max, satellites=None, save=None):
     #snapshotfile, catalogue_files, output_path = read_paths_from_config()    
     #halos = load_catalogue(catalogue_files['properties'])
     snapshotfile, halo_catalogue_files, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
-    halos = load_catalogue(halo_catalogue_files['properties'])
+    properties = halo_catalogue_files['properties']
+    print(properties)
+    halos = load_catalogue(properties)
 
-    #print("Number of halos before filtering:", len(halos))
+    print(halos.velocities.vmax)
 
     
-    if satellites is None:
+    if centrals:
         sample_indices = np.argwhere((halos.velocities.vmax > vmax_min) & (halos.velocities.vmax < vmax_max) & (halos.centrals == True)).flatten()
         print(sample_indices)
     else:

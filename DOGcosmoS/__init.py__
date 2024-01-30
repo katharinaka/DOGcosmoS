@@ -1,3 +1,4 @@
+from . import sample_selection
 from . import sample_selection.read_paths_from_config
 from . import sample_selection.select_sample
 from . import structural_properties
