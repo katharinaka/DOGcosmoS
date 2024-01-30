@@ -1,10 +1,11 @@
+#import DOGcosmoS
 import numpy as np
 import configparser
 from scipy.interpolate import splrep, splev
-from sample_selection import read_paths_from_config, select_sample
-from vcirc import vcirc_total
+from DOGcosmoS.sample_selection import read_paths_from_config, select_sample
+from DOGcosmoS.vcirc import vcirc_total
 
-def quantify_rotation_curve_shapes(vmax_min_sample=60, vmax_max_sample=120, save=None):
+def quantify_rotation_curve_shapes(vmax_min_sample, vmax_max_sample, save=None):
     """Calculates toration curve shape parameters for your galaxy sample.
     
     Arguments:
@@ -13,7 +14,8 @@ def quantify_rotation_curve_shapes(vmax_min_sample=60, vmax_max_sample=120, save
              save:            If True, an numpy array containing vmax and vfid of your sample is saved to your output path.
     
     """
-    sample_indices = select_sample(vmax_min_sample, vmax_max_sample, save=None)
+    sample_indices = select_sample(vmax_min=vmax_max_sample, vmax_max=vmax_max_sample, centrals=True, save=None)
+    print(sample_indices)
     vmax_sample = np.zeros(len(sample_indices))
     rfid_sample = np.zeros(len(sample_indices))
     vfid_sample = np.zeros(len(sample_indices))

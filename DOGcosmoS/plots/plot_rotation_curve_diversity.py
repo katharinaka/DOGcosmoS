@@ -9,8 +9,8 @@ from matplotlib.ticker import ScalarFormatter
 #from scipy.stats import binned_statistic
 import astropy
 
-from sample_selection import select_sample, read_paths_from_config
-from rotation_curve_shapes import quantify_rotation_curve_shapes
+from DOGcosmoS.sample_selection import select_sample, read_paths_from_config
+from DOGcosmoS.rotation_curve_shapes import quantify_rotation_curve_shapes
 
 def NFW_vcirc(vvir, r, rvir, c):
     x = r/rvir
@@ -111,7 +111,7 @@ def plot_vfid_vmax(vmax_min_sample=60, vmax_max_sample=120, title='Rotation curv
     plt.plot(np.ones(117)*60, np.linspace(3,120, 117), linestyle="--", color="grey")
     plt.plot(np.ones(117)*120, np.linspace(3,120, 117), linestyle="--", color="grey")
     cbar = fig.colorbar(data)
-    cbar.set_label('$\eta_{rot} = v_{fid} / v_{max}$')
+    cbar.set_label(r'$\eta_{rot} = v_{fid} / v_{max}$')
     plt.tight_layout()
     snapshotfile, halo_catalogue_files, output_path = read_paths_from_config()
     fig.savefig(output_path+save_as, dpi=dpi)

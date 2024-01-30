@@ -1,10 +1,11 @@
+#import DOGcosmoS
 import numpy as np
 import unyt as U
 #from unyt import G
 import matplotlib as plt
 from velociraptor import load as load_catalogue
 from swiftgalaxy import SWIFTGalaxy, Velociraptor
-from sample_selection import read_paths_from_config
+#from sample_selection import read_paths_from_config
 
 def vcirc_particle_type(xyz, m):
     """Calculates the circular velocity contributed by the particle type of interest (e.g. stars, gas or dark matter).
