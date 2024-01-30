@@ -82,4 +82,3 @@ def angular_momentum_variation(max_frac=0.3, shells=5):
         Lhat_variation_sample.append(Lhat_variation)
     
         return Lhat_variation_sample
-#np.save(path_results+'Lhat_variation', Lhat_variation_sample)

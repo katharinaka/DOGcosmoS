@@ -22,7 +22,7 @@ def read_paths_from_config(config_file='specify_your_paths.ini'):
     return snapshotfile, halo_catalogue_files, output_path
     
 
-def select_sample(vmax_min=60, vmax_max=120, centrals="True", save="False"):
+def select_sample(vmax_min=60, vmax_max=120, centrals=True, save=None):
     """Function to select your galaxy sample according to the range in maximum rotational velocity and environment.
 
     Args:
@@ -34,10 +34,11 @@ def select_sample(vmax_min=60, vmax_max=120, centrals="True", save="False"):
     snapshotfile, catalogue_files, output_path = read_paths_from_config(config_file='specify_your_paths.ini')    
     halos = load_catalogue(catalogue_files['properties'])
     
-    if centrals == "True":
+    if centrals:
         sample_indices = np.argwhere((halos.velocities.vmax > 60) & (halos.velocities.vmax < 120) & (halos.centrals == True)).flatten()
-    elif centrals == "False":
+    else:# centrals == "False":
         sample_indices = np.argwhere((halos.velocities.vmax > 60) & (halos.velocities.vmax < 120)).flatten()
-    if save == "True":
+        
+    if save is not None:
         np.save(output_path+'sample_indices.npy', sample_indices)
     return sample_indices
