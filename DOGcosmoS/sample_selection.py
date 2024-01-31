@@ -13,28 +13,28 @@ def read_paths_from_config(config_file='specify_your_paths.ini'):
     config.read(config_file)
     
     snapshotfile = config.get('INPUT', 'snapshotfile_path')
-    halo_catalogue = config.get('INPUT', 'halo_catalogue_path')
-    #print('halo_catalogue: ', halo_catalogue)
+    #halo_catalogue = config.get('INPUT', 'halo_catalogue_path')
 
-    _, extension = os.path.splitext(halo_catalogue)
+    halo_catalogue_filebase = config.get('INPUT', 'halo_catalogue_path')
 
-    if extension == '.properties':
-        halo_catalogue_files = dict(
-            properties=f"{halo_catalogue}.properties",
-            catalog_groups=f"{halo_catalogue}.catalog_groups",
-        )
+    halo_catalogue_properties = f"{halo_catalogue_filebase}.properties"
+    #if extension == '.properties':
+    #    halo_catalogue_files = dict(
+    #        properties=f"{halo_catalogue_file_base}.properties",
+    #        catalog_groups=f"{halo_catalogue_file_base}.catalog_groups",
+    #    )
 
-    else:
-        halo_catalogue_files = dict(
-            properties=f"{halo_catalogue}.properties.0",
-            catalog_groups=f"{halo_catalogue}.catalog_groups.0",
-        )
+    #else:
+    #    halo_catalogue_files = dict(
+    #        properties=f"{halo_catalogue_file_base}.properties.0",
+    #        catalog_groups=f"{halo_catalogue_file_base}.catalog_groups.0",
+    #    )
 
 
     output_path = config.get('OUTPUT', 'output_directory_path')
-
+    print(halo_catalogue_filebase)
     #return snapshotfile, halo_catalogue_files, output_path
-    return snapshotfile, halo_catalogue_files, output_path
+    return snapshotfile, halo_catalogue_filebase, halo_catalogue_properties, output_path
     
 
 def select_sample(vmax_min, vmax_max, centrals=True, save=None):
@@ -48,12 +48,8 @@ def select_sample(vmax_min, vmax_max, centrals=True, save=None):
     """
     #snapshotfile, catalogue_files, output_path = read_paths_from_config()    
     #halos = load_catalogue(catalogue_files['properties'])
-    snapshotfile, halo_catalogue_files, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
-    properties = halo_catalogue_files['properties']
-    print(properties)
-    halos = load_catalogue(properties)
-
-    print(halos.velocities.vmax)
+    snapshotfile, halo_catalogue_filebase, halo_catalogue_properties, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
+    halos = load_catalogue(halo_catalogue_properties)
 
     
     if centrals:

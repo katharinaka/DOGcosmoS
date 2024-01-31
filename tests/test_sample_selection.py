@@ -1,16 +1,17 @@
 import sys
-sys.path.append('/Users/puk/OSS_development/DOGcosmoS/DOGcosmoS')
+sys.path.append('/Users/puk/OSS_development/DOGcosmoS/DOGcosmoS/')
 
 import numpy as np
 import configparser
-from select_sample import sample_selection, read_paths_from_config 
+#from DOGcosmoS import sample_selection
+from sample_selection import select_sample, read_paths_from_config 
 
 def test_read_paths():
-    snapshotfile, halo_catalogue_files, output_path = read_paths_from_config('DOGcosmoS/specify_your_paths.ini')
+    snapshotfile, halo_catalogue_file_base, halo_catalogue_files, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
 
 
-    assert snapshotfile == '/Users/puk/Downloads/small_cosmo_volume/snap_0199.hdf5'
-    assert halo_catalogue_files is not None
+    assert snapshotfile == '/Users/puk/Downloads/cosmo_volume_example.hdf5'
+    assert halo_catalogue_files['properties'] == '/Users/puk/Downloads/cosmo_volume_example.properties'
     assert output_path is not None
 
 

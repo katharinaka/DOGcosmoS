@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: DOGcosmoS
+Version: 0.0.1
+Summary: A package to analyse the dynamics of galaxies in cosmological simulations.
+Author-email: Katharina Kain <a1057247@univie.ac.at>
+Project-URL: Homepage, https://github.com/katharinaka/DOGcosmoS.git
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.23
+Requires-Dist: unyt==2.9.3
+Requires-Dist: swiftgalaxy==1.0.0
+Requires-Dist: velociraptor
+
+# DOGcosmoS
+Dynamics Of Galaxies in Cosmological Simulations

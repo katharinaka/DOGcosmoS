@@ -24,6 +24,7 @@ def vcirc_particle_type(xyz, m):
     vcirc = np.sqrt(U.G * m_encl / r).to('km/s')   
     return vcirc, r, m
 
+
 def vcirc_total(halo_index, save=None, plot=None):
     """Calculates the total circular velocity.
     
@@ -32,12 +33,12 @@ def vcirc_total(halo_index, save=None, plot=None):
              save:       If True, circular velocity profile (r,vcirc) will be saved to your output path as numpy array. Default is False
              plot:       If True, a plot showing the contribution of the circular velocity from the different particle types (i.e. stars, gas and dark matter) will be created and saved at your output path.
     """
-    snapshotfile, halo_catalogue_files, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
+    snapshotfile, halo_catalogue_filebase, halo_catalogue_properties, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
     
     sg = SWIFTGalaxy(
            snapshotfile,    
              Velociraptor(
-             velociraptor_files=halo_catalogue_files,
+             halo_catalogue_filebase,
              halo_index=halo_index,
              centre_type='minpot',
              extra_mask='bound_only',

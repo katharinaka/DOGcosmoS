@@ -15,17 +15,16 @@ def quantify_rotation_curve_shapes(vmax_min_sample, vmax_max_sample, save=None):
     
     """
     sample_indices = select_sample(vmax_min=vmax_min_sample, vmax_max=vmax_max_sample, centrals=True, save=None)
-    print('sample_indices: ', sample_indices)
     vmax_sample = np.zeros(len(sample_indices))
     rfid_sample = np.zeros(len(sample_indices))
     vfid_sample = np.zeros(len(sample_indices))
     eta_rot_sample = np.zeros(len(sample_indices))
-
+    
     for i in range(len(sample_indices)):
         
         halo_index = sample_indices[i]
         
-        r, vcirc = vcirc_total(halo_index, save=None)
+        r, vcirc = vcirc_total(halo_index, save=None, plot=None)
     
         vmax = np.max(vcirc)
         rfid = 2 * vmax/70   #/70km/s kpc
@@ -45,7 +44,7 @@ def quantify_rotation_curve_shapes(vmax_min_sample, vmax_max_sample, save=None):
     print('vfid_vmax: ', vmax_vfid)
     
     if save is not None:
-        snapshotfile, catalogue_files, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
+        snapshotfile, halo_catalogue_filebase, halo_catalogue_properties, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
         np.save(output_path+'vmax_vfid.npy', vmax_vfid)
         
     return vmax_sample, vfid_sample, eta_rot_sample

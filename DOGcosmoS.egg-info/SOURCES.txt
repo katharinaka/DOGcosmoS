@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+DOGcosmoS/check_angmom_reliability.py
+DOGcosmoS/plot_rotation_curve_diversity.py
+DOGcosmoS/rotation_curve_shapes.py
+DOGcosmoS/sample_selection.py
+DOGcosmoS/structural_properties.py
+DOGcosmoS/vcirc.py
+DOGcosmoS.egg-info/PKG-INFO
+DOGcosmoS.egg-info/SOURCES.txt
+DOGcosmoS.egg-info/dependency_links.txt
+DOGcosmoS.egg-info/requires.txt
+DOGcosmoS.egg-info/top_level.txt
+tests/test_plot_rotation_curve_diversity.py
+tests/test_rotation_curve_shapes.py
+tests/test_sample_selection.py
