@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "DOGcosmoS"
+version = "0.0.1"
+authors = [
+    { name="Katharina Kain", email="a1057247@univie.ac.at" },
+]
+description = "A package to analyse the dynamics of galaxies in cosmological simulations."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy >=1.23",
+    "unyt == 2.9.3",
+    "swiftgalaxy == 1.0.0",
+    "velociraptor"
+]
+
+[project.urls]
+Homepage = "https://github.com/katharinaka/DOGcosmoS.git"
