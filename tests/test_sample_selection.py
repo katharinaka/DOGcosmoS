@@ -1,9 +1,9 @@
 import sys
-sys.path.append('/Users/puk/OSS_development/DOGcosmoS')
+sys.path.append('/Users/puk/OSS_development/DOGcosmoS/DOGcosmoS')
 
 import numpy as np
 import configparser
-from DOGcosmoS.sample_selection import select_sample, read_paths_from_config
+from select_sample import sample_selection, read_paths_from_config 
 
 def test_read_paths():
     snapshotfile, halo_catalogue_files, output_path = read_paths_from_config('DOGcosmoS/specify_your_paths.ini')

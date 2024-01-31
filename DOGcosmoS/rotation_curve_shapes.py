@@ -1,4 +1,3 @@
-import DOGcosmoS
 import numpy as np
 import configparser
 from scipy.interpolate import splrep, splev

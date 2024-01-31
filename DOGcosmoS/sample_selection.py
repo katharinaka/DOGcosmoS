@@ -18,16 +18,16 @@ def read_paths_from_config(config_file='specify_your_paths.ini'):
 
     _, extension = os.path.splitext(halo_catalogue)
 
-    if extension == '.0':
+    if extension == '.properties':
         halo_catalogue_files = dict(
-            properties=f"{halo_catalogue}.properties.0",
-            catalog_groups=f"{halo_catalogue}.catalog_groups.0",
+            properties=f"{halo_catalogue}.properties",
+            catalog_groups=f"{halo_catalogue}.catalog_groups",
         )
 
     else:
         halo_catalogue_files = dict(
-            properties=f"{halo_catalogue}.properties",
-            catalog_groups=f"{halo_catalogue}.catalog_groups",
+            properties=f"{halo_catalogue}.properties.0",
+            catalog_groups=f"{halo_catalogue}.catalog_groups.0",
         )
 
 
