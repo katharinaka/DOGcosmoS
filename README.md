@@ -1,24 +1,24 @@
 # DOGcosmoS
 
-Dynamics Of Galaxies in Cosmological Simulations
+Dynamics Of Galaxies in Cosmological Simulations.
+This package is for anyone who would like to analyse the dynamics of galaxies in a cosmological simulation box. The current version is focused on the shape of rotation curves and their diversity. More features are to come.
+
 
 # Installation
 Having cloned this project from github, you can move into the root directory and install via
 pip -m install --editable .
 
-Please make sure that you have the requirements installed before using this package:
+Please make sure that you have the requirements installed before using this package.
+Since they require specific versions to work well within this package, it is recommended to use a virtual environment and install them there. You can also find the list of requirements in requirements.txt
 
+python == 3.10.0
 swiftgalaxy == 1.0.0
 velocyraptor
 numpy == 1.23.5
 unyt == 2.9.3
 
-Since the rewuirements require specific versions to work well within this package, it is recommended to use a virtual environment.
 
 # Usage
-
-For anyone  who would like to analyse the dynamics of galaxies in a cosmological simulation box.
-
 A quick-start guide:
 First you need to specify the paths to the snapshotfile and halo catalogue in the file 'specify_your_paths.ini'.
 
