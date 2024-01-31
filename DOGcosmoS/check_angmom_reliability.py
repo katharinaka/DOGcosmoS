@@ -9,7 +9,17 @@ from swiftgalaxy import Velociraptor, SWIFTGalaxy
 
 
 def angmom(xyz, vxyz, m, frac):
-    """ Calculates the angular momentum """
+    """ Calculates the angular momentum from the mass enclosed within the specified mass fraction frac.
+    
+    Arguments:
+              xyz:  3xN array with cartesian particle positions
+              vxyz: 3xN array with cartesian particle velocities
+              m:    1xN array with particle masses
+              frac: mass fraction within which to calculate the angular momentum.
+
+    Returns:
+        Lhat
+    """
     transposed = False
     if xyz.ndim != 2:
         raise ValueError(
@@ -50,9 +60,12 @@ def angular_momentum_variation(max_frac=0.3, shells=5):
     """Calculates the root mean square variation of the angular momentum from the center up to a specified enclosed mass.
     The variation serves as a test whether the galaxy is undergoing perturbations.
     
-    Args:
+    Arguments:
         max_frac: mass fraction corresponding to the enclosed mass up to which the angular momentum variation is calculated. Default is 0.3.
         shells:   number of shells for which to calculate the angular momentum. Default is 5.
+    
+    Returns:
+        Lhat variation for each galaxy in the sample
     """
     sample_indices = select_sample()
     Lhat_variation_sample =[]

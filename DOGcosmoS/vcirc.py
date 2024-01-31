@@ -11,9 +11,12 @@ def vcirc_particle_type(xyz, m):
     """Calculates the circular velocity contributed by the particle type of interest (e.g. stars, gas or dark matter).
     
     Arguments:
-             xyz:  Input array of dimension 3xN containing particle positions.
-             m:    Input array of dimension 1xN containing particle masses.
-             save: If True, circular velocity profile (r,vcirc) will be saved to your output path as numpy array. Default is False.
+        xyz :  Input array of dimension 3xN containing particle positions.
+        m :    Input array of dimension 1xN containing particle masses.
+             
+    Returns:
+
+        vcirc, r, m   
     """
     xyz = xyz.T
     r = np.sqrt(np.sum(np.power(xyz, 2), axis=0)).to('kpc')
@@ -29,9 +32,12 @@ def vcirc_total(halo_index, save=None, plot=None):
     """Calculates the total circular velocity.
     
     Arguments:
-             halo_index: Halo index from VELOCIRaptor. Should be a single index, not an array.
-             save:       If True, circular velocity profile (r,vcirc) will be saved to your output path as numpy array. Default is False
-             plot:       If True, a plot showing the contribution of the circular velocity from the different particle types (i.e. stars, gas and dark matter) will be created and saved at your output path.
+        halo_index: Halo index from VELOCIRaptor. Should be a single index, not an array.
+        save:       If True, circular velocity profile (r,vcirc) will be saved to your output path as numpy array. Default is False
+        plot:       If True, a plot showing the contribution of the circular velocity from the different particle types (i.e. stars, gas and dark matter) will be created and saved at your output path.
+
+    Returns:
+        r_all, vcirc_all
     """
     snapshotfile, halo_catalogue_filebase, halo_catalogue_properties, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
     

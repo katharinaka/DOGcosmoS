@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plotting the diversity of rotation curve shapes &mdash; DOGcosmoS 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Parameterisation of rotation curve shapes" href="rotation_curve_shapes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DOGcosmoS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="specify_your_path.html">Specify Your Paths Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample_selection.html">Sample selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structural_properties.html">Structural properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vcirc.html">Circular velocity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="check_angmom_reliability.html">Angular Momentum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vcirc.html">Circular velocity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rotation_curve_shapes.html">Parameterisation of rotation curve shapes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plotting the diversity of rotation curve shapes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plot_rotation_curve_diversity.plot_vfid_vmax"><code class="docutils literal notranslate"><span class="pre">plot_vfid_vmax()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DOGcosmoS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Plotting the diversity of rotation curve shapes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/plot_rotation_curve_diversity.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="plotting-the-diversity-of-rotation-curve-shapes">
+<span id="plot-rotation-curve-siversity"></span><h1>Plotting the diversity of rotation curve shapes<a class="headerlink" href="#plotting-the-diversity-of-rotation-curve-shapes" title="Permalink to this heading"></a></h1>
+<p>This function plots your data to visualize the diversity of rotation curves for the galaxies in your simulation.</p>
+<span class="target" id="module-plot_rotation_curve_diversity"></span><dl class="py function">
+<dt class="sig sig-object py" id="plot_rotation_curve_diversity.plot_vfid_vmax">
+<span class="sig-prename descclassname"><span class="pre">plot_rotation_curve_diversity.</span></span><span class="sig-name descname"><span class="pre">plot_vfid_vmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vmax_min_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax_max_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Rotation</span> <span class="pre">curve</span> <span class="pre">diversity'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'simulation</span> <span class="pre">data'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_NFW_ref</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_as</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'vfid_vs_vmax.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#plot_rotation_curve_diversity.plot_vfid_vmax" title="Permalink to this definition"></a></dt>
+<dd><p>This funktion plots the rotation velocity at the fiducial radius against vmax.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vmax_min_sample</strong> – Lower limit of the maximum rotational velocity of your galaxy sample</p></li>
+<li><p><strong>vmax_max_sample</strong> – Upper limit of the maximum rotational velocity of your galaxy sample</p></li>
+<li><p><strong>title</strong> – Title of the plot. Default is ‘Rotation curve diversity’.</p></li>
+<li><p><strong>legend</strong> – Legend to data points. Default is ‘simulation data’.</p></li>
+<li><p><strong>plot_NFW_ref</strong> – If true, a reference line marking where NFW would lie is plotted. Default is False.</p></li>
+<li><p><strong>save_as</strong> – File name under which to save the plot. Default is ‘vfid_vs_vmax.png’</p></li>
+<li><p><strong>dpi</strong> – Dots per inch. Default is 200.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Returns: A plot of the distribution vfid vs. vmax of the galaxy sample</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="rotation_curve_shapes.html" class="btn btn-neutral float-left" title="Parameterisation of rotation curve shapes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Katharina Kain.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

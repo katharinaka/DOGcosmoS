@@ -49,6 +49,7 @@ def HI_disk_height(xyz, m_HI, R_halfmass, frac=0.9):
     Arguments:
              xyz: array of dimension 3xN containing gas particle positions.
              m_HI: array of dimension 1xN containing HI masses.
+             R_halfmass:  halfmass radius of the galaxy
              frac: mass fraction to be enclosed. Default is 0.9
     """
     rotmat = L_align(

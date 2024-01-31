@@ -44,14 +44,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Specify Your Paths Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Specify Your Paths Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sample_selection.html">Sample selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structural_properties.html">Structural properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vcirc.html">Circular velocity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="check_angmom_reliability.html">Angular Momentum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vcirc.html">Circular velocity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rotation_curve_shapes.html">Parameterisation of rotation curve shapes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_rotation_curve_diversity.html">Plotting the diversity of rotation curve shapes</a></li>
 </ul>
 
         </div>
@@ -80,7 +80,7 @@
              
   <div class="section" id="specify-your-paths-configuration">
 <span id="specify-your-paths"></span><h1>Specify Your Paths Configuration<a class="headerlink" href="#specify-your-paths-configuration" title="Permalink to this heading"></a></h1>
-<p>Before diving into DOGcosmoS, you need to specify the paths to the simulation snapshot you wish to analyse, the according halo catalogue and your preferred output directory in the configuration file ‘specify_your_paths.ini’. The file is structured as follows:</p>
+<p>Before diving into DOGcosmoS, you need to specify the paths to the simulation snapshot you wish to analyse, the according halo catalogue and your preferred output directory in the configuration file ‘specify_your_paths.ini’. The file is structured as you can see below. The halo_catalogue path should point to the halo catalogue filebase, i.e. the filename without the extensions ‘.properties’ etc.</p>
 <div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[INPUT]</span>
 <span class="na">snapshotfile_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/path/to/snapshotfile</span>
 <span class="na">halo_catalogue_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/path/to/halo_catalogue</span>
@@ -88,10 +88,6 @@
 <span class="k">[OUTPUT]</span>
 <span class="na">output_directory_path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/path/to/output_directory</span>
 </pre></div>
-</div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h2>
-<p>When working with the provided snapshot, this would be your input:</p>
 </div>
 </div>
 

@@ -57,6 +57,20 @@ def NFW_concentration(M,z):
     return c
 
 def plot_vfid_vmax(vmax_min_sample, vmax_max_sample, title='Rotation curve diversity', legend='simulation data', plot_NFW_ref=False, save_as='vfid_vs_vmax.png', dpi=200):
+    """This funktion plots the rotation velocity at the fiducial radius against vmax.
+
+    Arguments:
+             vmax_min_sample:  Lower limit of the maximum rotational velocity of your galaxy sample
+             vmax_max_sample:  Upper limit of the maximum rotational velocity of your galaxy sample
+             title:            Title of the plot. Default is 'Rotation curve diversity'.
+             legend:           Legend to data points. Default is 'simulation data'.
+             plot_NFW_ref:     If true, a reference line marking where NFW would lie is plotted. Default is False.
+             save_as:          File name under which to save the plot. Default is 'vfid_vs_vmax.png'
+             dpi:              Dots per inch. Default is 200.
+    
+    Returns: A plot of the distribution vfid vs. vmax of the galaxy sample
+
+    """
 #def plot_vfid_vmax(sample_indices, title='Rotation curve diversity', legend='simulation data', plot_NFW_ref=True, save_as='vfid_vs_vmax.png', dpi=200):
 
     vmax_sample, vfid_sample, eta_rot_sample = quantify_rotation_curve_shapes(vmax_min_sample, vmax_max_sample, save=None)

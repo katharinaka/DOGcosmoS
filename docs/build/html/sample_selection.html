@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Angular Momentum" href="check_angmom_reliability.html" />
+    <link rel="next" title="Structural properties" href="structural_properties.html" />
     <link rel="prev" title="Specify Your Paths Configuration" href="specify_your_path.html" /> 
 </head>
 
@@ -50,9 +50,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#sample_selection.select_sample"><code class="docutils literal notranslate"><span class="pre">select_sample()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="structural_properties.html">Structural properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vcirc.html">Circular velocity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="check_angmom_reliability.html">Angular Momentum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vcirc.html">Circular velocity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="rotation_curve_shapes.html">Parameterisation of rotation curve shapes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_rotation_curve_diversity.html">Plotting the diversity of rotation curve shapes</a></li>
 </ul>
 
         </div>
@@ -81,17 +84,18 @@
              
   <div class="section" id="sample-selection">
 <span id="id1"></span><h1>Sample selection<a class="headerlink" href="#sample-selection" title="Permalink to this heading"></a></h1>
-<p>Select your sample</p>
+<p>Here you can select your galaxy sample of interest. For instance you might be interested in low-mass galaxies and select your sample by an according vmax range, e.g. between 60 and 120 km/s.</p>
 <span class="target" id="module-sample_selection"></span><dl class="py function">
 <dt class="sig sig-object py" id="sample_selection.read_paths_from_config">
 <span class="sig-prename descclassname"><span class="pre">sample_selection.</span></span><span class="sig-name descname"><span class="pre">read_paths_from_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'specify_your_paths.ini'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sample_selection.read_paths_from_config" title="Permalink to this definition"></a></dt>
 <dd><p>Reads the paths from the configuration file ‘specify_your_paths.ini’.</p>
-<p>If you get an error because the halo_catalogue_files cannot be found, check if your halo catalogue filenames end in ‘.0’ and if not, edit the respective line in this function accordingly.</p>
+<p>If you get an error because the halo_catalogue_files cannot be found, check if your halo catalogue filenames end in ‘.0’ and if not, you can edit the respective line in this function accordingly by adding “.0” to the line
+halo_catalogue_properties = f”{halo_catalogue_filebase}.properties”.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="sample_selection.select_sample">
-<span class="sig-prename descclassname"><span class="pre">sample_selection.</span></span><span class="sig-name descname"><span class="pre">select_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vmax_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centrals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'True'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'False'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sample_selection.select_sample" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">sample_selection.</span></span><span class="sig-name descname"><span class="pre">select_sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vmax_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">centrals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sample_selection.select_sample" title="Permalink to this definition"></a></dt>
 <dd><p>Function to select your galaxy sample according to the range in maximum rotational velocity and environment.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -99,10 +103,11 @@
 <li><p><strong>vmax_min</strong> – lower limit of maximum rotational velocity that your sample should include. Default = 60 km/s</p></li>
 <li><p><strong>vmax_max</strong> – upper limit of maximum rotational velocity that you sample should include. Default = 120 km/s.</p></li>
 <li><p><strong>centrals</strong> – if “True”, the sample will be restricted to field galaxies; if “False”, the sample will contain satellite galaxies as well. Default = “True”</p></li>
-<li><p><strong>save</strong> – if “True”, the resulting sample indices are saved to your Results directory. Default = “True”</p></li>
+<li><p><strong>save</strong> – if “True”, the resulting sample indices are saved to your Results directory. Default is None.</p></li>
 </ul>
 </dd>
 </dl>
+<p>Returns: 1xN array containing the indices of the galaxies matching the selection criteria.</p>
 </dd></dl>
 
 </div>
@@ -112,7 +117,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="specify_your_path.html" class="btn btn-neutral float-left" title="Specify Your Paths Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="check_angmom_reliability.html" class="btn btn-neutral float-right" title="Angular Momentum" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="structural_properties.html" class="btn btn-neutral float-right" title="Structural properties" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

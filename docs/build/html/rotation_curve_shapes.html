@@ -20,7 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Circular velocity" href="vcirc.html" /> 
+    <link rel="next" title="Plotting the diversity of rotation curve shapes" href="plot_rotation_curve_diversity.html" />
+    <link rel="prev" title="Angular Momentum" href="check_angmom_reliability.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -46,12 +47,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="specify_your_path.html">Specify Your Paths Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sample_selection.html">Sample selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structural_properties.html">Structural properties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vcirc.html">Circular velocity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="check_angmom_reliability.html">Angular Momentum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vcirc.html">Circular velocity</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Parameterisation of rotation curve shapes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#rotation_curve_shapes.quantify_rotation_curve_shapes"><code class="docutils literal notranslate"><span class="pre">quantify_rotation_curve_shapes()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="plot_rotation_curve_diversity.html">Plotting the diversity of rotation curve shapes</a></li>
 </ul>
 
         </div>
@@ -89,15 +93,18 @@
 <p>With this parameterisation you can investigate the distribution of rotation curve shapes for your galaxy sample of interest.</p>
 <span class="target" id="module-rotation_curve_shapes"></span><dl class="py function">
 <dt class="sig sig-object py" id="rotation_curve_shapes.quantify_rotation_curve_shapes">
-<span class="sig-prename descclassname"><span class="pre">rotation_curve_shapes.</span></span><span class="sig-name descname"><span class="pre">quantify_rotation_curve_shapes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vmax_min_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax_max_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">120</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rotation_curve_shapes.quantify_rotation_curve_shapes" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">rotation_curve_shapes.</span></span><span class="sig-name descname"><span class="pre">quantify_rotation_curve_shapes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vmax_min_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax_max_sample</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rotation_curve_shapes.quantify_rotation_curve_shapes" title="Permalink to this definition"></a></dt>
 <dd><p>Calculates toration curve shape parameters for your galaxy sample.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vmax_min_sample</strong> – Lower limit of maximum rotation velocity that your sample should contain.</p></li>
 <li><p><strong>vmax_max_sample</strong> – Upper limit of maximum rotation velocity that your sample should contain.</p></li>
-<li><p><strong>save</strong> – If True, an numpy array containing vmax and vfid of your sample is saved to your output path.</p></li>
+<li><p><strong>save</strong> – If True, an numpy array containing vmax and vfid of your sample is saved to your output path. Default is None.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>vmax_sample, vfid_sample, eta_rot_sample</p>
 </dd>
 </dl>
 </dd></dl>
@@ -108,7 +115,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="vcirc.html" class="btn btn-neutral float-left" title="Circular velocity" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="check_angmom_reliability.html" class="btn btn-neutral float-left" title="Angular Momentum" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="plot_rotation_curve_diversity.html" class="btn btn-neutral float-right" title="Plotting the diversity of rotation curve shapes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

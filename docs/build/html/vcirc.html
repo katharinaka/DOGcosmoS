@@ -20,8 +20,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Parameterisation of rotation curve shapes" href="rotation_curve_shapes.html" />
-    <link rel="prev" title="Angular Momentum" href="check_angmom_reliability.html" /> 
+    <link rel="next" title="Angular Momentum" href="check_angmom_reliability.html" />
+    <link rel="prev" title="Structural properties" href="structural_properties.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -47,6 +47,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="specify_your_path.html">Specify Your Paths Configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sample_selection.html">Sample selection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structural_properties.html">Structural properties</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Circular velocity</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vcirc.vcirc_particle_type"><code class="docutils literal notranslate"><span class="pre">vcirc_particle_type()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vcirc.vcirc_total"><code class="docutils literal notranslate"><span class="pre">vcirc_total()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="check_angmom_reliability.html">Angular Momentum</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Circular velocity</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#vcirc.vcirc_particle_type"><code class="docutils literal notranslate"><span class="pre">vcirc_particle_type()</span></code></a></li>
@@ -54,6 +60,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rotation_curve_shapes.html">Parameterisation of rotation curve shapes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plot_rotation_curve_diversity.html">Plotting the diversity of rotation curve shapes</a></li>
 </ul>
 
         </div>
@@ -87,29 +94,35 @@
 \[vcirc = \sqrt{\frac{G\ M(&lt;r)}{r}}.\]</div>
 <span class="target" id="module-vcirc"></span><dl class="py function">
 <dt class="sig sig-object py" id="vcirc.vcirc_particle_type">
-<span class="sig-prename descclassname"><span class="pre">vcirc.</span></span><span class="sig-name descname"><span class="pre">vcirc_particle_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vcirc.vcirc_particle_type" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">vcirc.</span></span><span class="sig-name descname"><span class="pre">vcirc_particle_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vcirc.vcirc_particle_type" title="Permalink to this definition"></a></dt>
 <dd><p>Calculates the circular velocity contributed by the particle type of interest (e.g. stars, gas or dark matter).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>xyz</strong> – Input array of dimension 3xN containing particle positions.</p></li>
 <li><p><strong>m</strong> – Input array of dimension 1xN containing particle masses.</p></li>
-<li><p><strong>save</strong> – If True, circular velocity profile (r,vcirc) will be saved to your output path as numpy array. Default is False.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>vcirc, r, m</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="vcirc.vcirc_total">
-<span class="sig-prename descclassname"><span class="pre">vcirc.</span></span><span class="sig-name descname"><span class="pre">vcirc_total</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">halo_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vcirc.vcirc_total" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">vcirc.</span></span><span class="sig-name descname"><span class="pre">vcirc_total</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">halo_index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vcirc.vcirc_total" title="Permalink to this definition"></a></dt>
 <dd><p>Calculates the total circular velocity.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>halo_index</strong> – Halo index from VELOCIRaptor. Should be a single index, not an array.</p></li>
 <li><p><strong>save</strong> – If True, circular velocity profile (r,vcirc) will be saved to your output path as numpy array. Default is False</p></li>
+<li><p><strong>plot</strong> – If True, a plot showing the contribution of the circular velocity from the different particle types (i.e. stars, gas and dark matter) will be created and saved at your output path.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>r_all, vcirc_all</p>
 </dd>
 </dl>
 </dd></dl>
@@ -120,8 +133,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="check_angmom_reliability.html" class="btn btn-neutral float-left" title="Angular Momentum" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="rotation_curve_shapes.html" class="btn btn-neutral float-right" title="Parameterisation of rotation curve shapes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="structural_properties.html" class="btn btn-neutral float-left" title="Structural properties" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="check_angmom_reliability.html" class="btn btn-neutral float-right" title="Angular Momentum" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

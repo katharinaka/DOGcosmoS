@@ -12,9 +12,12 @@ Welcome to DOGcosmoS's documentation!
 
    specify_your_path.rst
    sample_selection.rst
+   structural_properties.rst
+   vcirc.rst
    check_angmom_reliability.rst
    vcirc.rst
    rotation_curve_shapes.rst
+   plot_rotation_curve_diversity.rst
    
 
 Indices and tables

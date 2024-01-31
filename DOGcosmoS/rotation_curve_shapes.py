@@ -11,8 +11,9 @@ def quantify_rotation_curve_shapes(vmax_min_sample, vmax_max_sample, save=None):
     Arguments:
              vmax_min_sample: Lower limit of maximum rotation velocity that your sample should contain.
              vmax_max_sample: Upper limit of maximum rotation velocity that your sample should contain.
-             save:            If True, an numpy array containing vmax and vfid of your sample is saved to your output path.
-    
+             save:            If True, an numpy array containing vmax and vfid of your sample is saved to your output path. Default is None.
+    Returns:
+        vmax_sample, vfid_sample, eta_rot_sample
     """
     sample_indices = select_sample(vmax_min=vmax_min_sample, vmax_max=vmax_max_sample, centrals=True, save=None)
     vmax_sample = np.zeros(len(sample_indices))
