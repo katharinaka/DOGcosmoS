@@ -25,7 +25,12 @@ def quantify_rotation_curve_shapes(vmax_min_sample, vmax_max_sample, save=None):
         
         halo_index = sample_indices[i]
         
+        #if halo_index == 2:
+        #    continue
+                
         r, vcirc = vcirc_total(halo_index, save=None, plot=None)
+        if not len(vcirc) > 1:
+            continue
     
         vmax = np.max(vcirc)
         rfid = 2 * vmax/70   #/70km/s kpc

@@ -1,0 +1,7 @@
+from sample_selection import read_paths_from_config, select_sample
+from vcirc import vcirc_total
+#import select_sample, read_paths_from_config
+from rotation_curve_shapes import quantify_rotation_curve_shapes
+from plot_rotation_curve_diversity import plot_vfid_vmax
+
+plot_vfid_vmax(60,120)

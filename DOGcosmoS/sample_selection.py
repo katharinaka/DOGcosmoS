@@ -6,8 +6,10 @@ import os
 def read_paths_from_config(config_file='specify_your_paths.ini'):
     """Reads the paths from the configuration file 'specify_your_paths.ini'.
     
-    If you get an error because the halo_catalogue_files cannot be found, check if your halo catalogue filenames end in '.0' and if not, you can edit the respective line in this function accordingly by adding ".0" to the line 
-    halo_catalogue_properties = f"{halo_catalogue_filebase}.properties".
+    If you get an error because the halo_catalogue_files cannot be found, check if your halo catalogue filenames end in '.0' and if not, you can edit the respective lines in this function accordingly by removing ".0" from the dictionary
+    halo_catalogue_properties =  dict(
+                properties=f"{halo_catalogue_filebase}.properties.0",
+                catalog_groups=f"{halo_catalogue_filebase}.catalog_groups.0".
     
     """
     config = configparser.ConfigParser()
@@ -15,8 +17,13 @@ def read_paths_from_config(config_file='specify_your_paths.ini'):
     
     snapshotfile = config.get('INPUT', 'snapshotfile_path')
     halo_catalogue_filebase = config.get('INPUT', 'halo_catalogue_path')
+    
+    halo_catalogue_properties =  dict(
+                properties=f"{halo_catalogue_filebase}.properties.0",
+                catalog_groups=f"{halo_catalogue_filebase}.catalog_groups.0",
+            )  #change to halo_catalogue_files when working over it
 
-    halo_catalogue_properties = f"{halo_catalogue_filebase}.properties"
+    #halo_catalogue_properties = f"{halo_catalogue_filebase}.properties.0
  
     output_path = config.get('OUTPUT', 'output_directory_path')
     print(halo_catalogue_filebase)
@@ -38,7 +45,7 @@ def select_sample(vmax_min, vmax_max, centrals=True, save=None):
     #snapshotfile, catalogue_files, output_path = read_paths_from_config()    
     #halos = load_catalogue(catalogue_files['properties'])
     snapshotfile, halo_catalogue_filebase, halo_catalogue_properties, output_path = read_paths_from_config(config_file='specify_your_paths.ini')
-    halos = load_catalogue(halo_catalogue_properties)
+    halos = load_catalogue(halo_catalogue_properties['properties'])
 
     
     if centrals:
